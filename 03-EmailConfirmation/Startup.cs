@@ -1,3 +1,4 @@
+using _03_EmailConfirmation.Configuration;
 using _03_EmailConfirmation.Data;
 using _03_EmailConfirmation.Models;
 using Microsoft.AspNetCore.Builder;
@@ -14,11 +15,11 @@ namespace _03_EmailConfirmation
 {
     public class Startup
     {
-        private readonly IConfiguration _config;
+        private readonly IConfiguration _configuration;
 
-        public Startup(IConfiguration config)
+        public Startup(IConfiguration configuration)
         {
-            _config = config;
+            _configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -50,13 +51,9 @@ namespace _03_EmailConfirmation
                 config.LoginPath = "/Home/Login";
             });
 
-            services.AddMailKit(config =>
-            {
-                config.UseMailKit(new MailKitOptions
-                {
-                    
-                });
-            });
+            // Setup validation email
+            var validationEmailOptions = _configuration.GetSection(ValidationEmailOptions.SectionName).Get<ValidationEmailOptions>();
+            services.AddMailKit(config => config.UseMailKit(validationEmailOptions) );
 
             services.AddControllersWithViews();
         }
