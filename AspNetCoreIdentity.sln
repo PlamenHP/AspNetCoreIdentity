@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-IdentityAuthentication",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03-EmailConfirmation", "03-EmailConfirmation\03-EmailConfirmation.csproj", "{BBD11950-BAE4-4C6E-8919-2E90C47DA154}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-AuthorizationPolicyClaims", "04-AuthorizationPolicyClaims\04-AuthorizationPolicyClaims.csproj", "{4C20A5C4-18DE-46EF-9D73-07D53004178E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{BBD11950-BAE4-4C6E-8919-2E90C47DA154}.Release|x64.Build.0 = Release|Any CPU
 		{BBD11950-BAE4-4C6E-8919-2E90C47DA154}.Release|x86.ActiveCfg = Release|Any CPU
 		{BBD11950-BAE4-4C6E-8919-2E90C47DA154}.Release|x86.Build.0 = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Debug|x86.Build.0 = Debug|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|x64.Build.0 = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|x86.ActiveCfg = Release|Any CPU
+		{4C20A5C4-18DE-46EF-9D73-07D53004178E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
