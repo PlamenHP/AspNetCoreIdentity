@@ -2,26 +2,27 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 
-namespace WebApplication1
+namespace _06_IS4_ApiServer
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication("CookieAuth")
-                .AddCookie("CookieAuth", config =>
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", config =>
                 {
-                    config.Cookie.Name = "Grandmas.Cookie";
-                    config.LoginPath = "/Home/Authenticate";
+                    config.Authority = "https://localhost:44393/";
+                    config.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false
+                    };
                 });
 
-            services.AddControllersWithViews();
+            services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -30,13 +31,12 @@ namespace WebApplication1
             }
 
             app.UseRouting();
-
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
             });
         }
     }

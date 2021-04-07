@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApplication1
+namespace _06_IS4_ApiServer
 {
-    public static class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
