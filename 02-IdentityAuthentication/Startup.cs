@@ -23,14 +23,14 @@ namespace _02_IdentityAuthentication
 
             // Register Identity repositories, link Identity to DbContext, generate tokens
             services.AddIdentity<AppUser, IdentityRole>(config =>
-                {
-                    config.Password.RequiredLength = 4;
-                    config.Password.RequireDigit = false;
-                    config.Password.RequireNonAlphanumeric = false;
-                    config.Password.RequireUppercase = false;
-                })
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+            {
+                config.Password.RequiredLength = 4;
+                config.Password.RequireDigit = false;
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequireUppercase = false;
+            })
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
 
             // Setup cookie
             services.ConfigureApplicationCookie(config =>

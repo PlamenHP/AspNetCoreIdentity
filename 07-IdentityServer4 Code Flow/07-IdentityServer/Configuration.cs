@@ -37,6 +37,7 @@ namespace _07_IdentityServer
                     AllowedGrantTypes = GrantTypes.Code,
                     RedirectUris = { "https://localhost:44358/signin-oidc" },
                     AllowedScopes = { "ApiOne", "ApiTwo", OpenId, Profile},
+                    RequireConsent = false
                 }
             };
         }

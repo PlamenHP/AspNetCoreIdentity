@@ -17,6 +17,7 @@ namespace _07_MvcClient
                 .AddCookie("Cookie")
                 .AddOpenIdConnect("oidc", x =>
                 {
+                    x.ClientId = "mvc_id";
                     x.Authority = "https://localhost:44357/";
                     x.ClientId = "mvc_id";
                     x.ClientSecret = "mvc_secret";
